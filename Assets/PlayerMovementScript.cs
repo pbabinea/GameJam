@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
-    private int y;
-
-
-
+    public GameObject antag; //to access BeatScript
 
     void Start()
     {
@@ -19,6 +16,15 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //player moves one lane up/down (within the screen) if they press the button on the beat
+        //FIX - player can move twice on a beat if pressed quickly
+        if (Input.GetKeyDown(KeyCode.UpArrow) && antag.GetComponent<BeatScript>().isOnBeat() && transform.position.y < 4)
+        {
+            transform.position = transform.position + new Vector3(0, 2, 0);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow) && antag.GetComponent<BeatScript>().isOnBeat() && transform.position.y > -4)
+        {
+            transform.position = transform.position + new Vector3(0, -2, 0);
+        }
     }
 }
