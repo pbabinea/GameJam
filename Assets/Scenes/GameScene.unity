@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 7758490484947507639, guid: bde61edf8d808cc4491ea55d4eaeb3fd, type: 3}
   antag: {fileID: 893084152}
+  player: {fileID: 825189879}
   xPos: 9.9
   spawnRate: 0
   spawnDelay: 0

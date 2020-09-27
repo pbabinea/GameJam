@@ -123,5 +123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   antag: {fileID: 0}
+  player: {fileID: 0}
   speed: -5
   initPos: 0

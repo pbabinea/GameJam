@@ -11,6 +11,7 @@ public class SpawnerController : MonoBehaviour
     private List<int> lanes = new List<int>{0,4,-4,-2,2,0,2,-2,4,0,-4};
     public GameObject blockPrefab;
     public GameObject antag;
+    public GameObject player;
     public float xPos;
     public float spawnRate;
     public float spawnDelay;
@@ -39,6 +40,10 @@ public class SpawnerController : MonoBehaviour
         if (frame >= beatLength)
         {
             //Instantiate(blockPrefab, new Vector3(xPos, 0, 0), Quaternion.identity);
+            if(index%3==0)
+            {
+                SpawnDouble(lanes[index]);
+            }
             Debug.Log("index" + index);
             Spawn(lanes[index]);
             index++;
@@ -56,10 +61,17 @@ public class SpawnerController : MonoBehaviour
     void Spawn(float lane)
     {
         //GameObject newBlock = Instantiate(blockPrefab, spawnPoint);
-        GameObject newBlock = Instantiate(blockPrefab, new Vector3(xPos, lane, 0), Quaternion.identity);       
+        GameObject newBlock = Instantiate(blockPrefab, new Vector3(xPos, lane, 0), Quaternion.identity);
+        newBlock.GetComponent<BlockScript>().player = player;
     }
-    //void SpawnTwoAdjacent
+    //void SpawnTwo
     //void SpawnSpeedy
     //void SpawnLongBoy
-    //void SpawnDouble
+    void SpawnDouble(float lane)
+    {
+        GameObject newBlock1 = Instantiate(blockPrefab, new Vector3(xPos, lane, 0), Quaternion.identity);
+        GameObject newBlock2 = Instantiate(blockPrefab, new Vector3(xPos+(15/2), lane, 0), Quaternion.identity);
+        newBlock1.GetComponent<BlockScript>().player = player;
+        newBlock2.GetComponent<BlockScript>().player = player;
+    }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockScript : MonoBehaviour
 {
     public GameObject antag;
+    public GameObject player;
     public float speed;
     public float initPos;
 
@@ -33,6 +34,7 @@ public class BlockScript : MonoBehaviour
         if ("Player".Equals(collision.gameObject.tag))
         {
             UnityEngine.Debug.Log("collision");
+            player.GetComponent<PlayerScript>().score -= 250;
             Destroy(this.gameObject);
         }
     }
