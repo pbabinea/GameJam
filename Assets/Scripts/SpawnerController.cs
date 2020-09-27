@@ -30,7 +30,7 @@ public class SpawnerController : MonoBehaviour
             sample = Mathf.Round(sample);
             lanes[i] = sample;
         }*/
-        //I wanted to try to randomly generate some of the positions, but the code has other ideas, i guess :/
+        //I wanted to try to randomly generate some of the positions, but fate would not have it :/
     }
         
 
@@ -39,15 +39,18 @@ public class SpawnerController : MonoBehaviour
         frame++;
         if (frame >= beatLength)
         {
-            //Instantiate(blockPrefab, new Vector3(xPos, 0, 0), Quaternion.identity);
             if(index%3==0)
             {
-                SpawnDouble(lanes[index]);
+                if (index % 2 == 0)
+                {
+                    SpawnTwo(lanes[index]);
+                } else
+                {
+                    SpawnDouble(lanes[index]);
+                }
             }
-            Debug.Log("index" + index);
             Spawn(lanes[index]);
             index++;
-            //Spawn(lanes[index]);
             frame = 0;
             if (index == lanes.Count)
             {
@@ -57,21 +60,26 @@ public class SpawnerController : MonoBehaviour
         
     }
 
-    //void Spawn()
     void Spawn(float lane)
     {
-        //GameObject newBlock = Instantiate(blockPrefab, spawnPoint);
         GameObject newBlock = Instantiate(blockPrefab, new Vector3(xPos, lane, 0), Quaternion.identity);
         newBlock.GetComponent<BlockScript>().player = player;
     }
-    //void SpawnTwo
-    //void SpawnSpeedy
-    //void SpawnLongBoy
-    void SpawnDouble(float lane)
+
+    void SpawnTwo(float lane) //spawns two at same beat, different lanes
+    {
+        GameObject newBlock = Instantiate(blockPrefab, new Vector3(xPos+5, lane, 0), Quaternion.identity);
+        newBlock.GetComponent<BlockScript>().player = player;
+    }
+
+    void SpawnDouble(float lane) //spawns one on-beat and one in between beats
     {
         GameObject newBlock1 = Instantiate(blockPrefab, new Vector3(xPos, lane, 0), Quaternion.identity);
         GameObject newBlock2 = Instantiate(blockPrefab, new Vector3(xPos+(15/2), lane, 0), Quaternion.identity);
         newBlock1.GetComponent<BlockScript>().player = player;
         newBlock2.GetComponent<BlockScript>().player = player;
     }
+    //void SpawnSpeedy
+    //void SpawnLongBoy
+    //these didn't make it in :(
 }
