@@ -269,10 +269,9 @@ GameObject:
   - component: {fileID: 825189881}
   - component: {fileID: 825189880}
   - component: {fileID: 825189884}
-<<<<<<< HEAD
+
 =======
   - component: {fileID: 825189885}
->>>>>>> c1febb2ba6ee3c35d2ab7cd3be9a3bd48eacf4f0
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -372,32 +371,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< HEAD
---- !u!95 &825189884
-Animator:
-  serializedVersion: 3
+
 =======
 --- !u!61 &825189884
 BoxCollider2D:
->>>>>>> c1febb2ba6ee3c35d2ab7cd3be9a3bd48eacf4f0
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 825189879}
   m_Enabled: 1
-<<<<<<< HEAD
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b91821d5b4b8f4b49804c239d04072f2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
-=======
+
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -437,7 +421,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
->>>>>>> c1febb2ba6ee3c35d2ab7cd3be9a3bd48eacf4f0
+=======
 --- !u!1 &893084152
 GameObject:
   m_ObjectHideFlags: 0
