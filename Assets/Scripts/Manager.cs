@@ -55,11 +55,5 @@ public class Manager : MonoBehaviour
         isPaused = false;
         Time.timeScale = 1;
     }
-    //end game 
-    public void EndGame()
-    {
-        int finalScore = player.GetComponent<PlayerScript>().score;
-        PlayerPrefs.SetInt("finalScore", finalScore);
-        SceneManager.LoadScene("GameOver");
-    }
+
 }
