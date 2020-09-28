@@ -35,6 +35,7 @@ public class BlockScript : MonoBehaviour
         {
             UnityEngine.Debug.Log("collision");
             player.GetComponent<PlayerScript>().score -= 250;
+            player.GetComponent<PlayerScript>().lives -= 1;
             Destroy(this.gameObject);
         }
     }

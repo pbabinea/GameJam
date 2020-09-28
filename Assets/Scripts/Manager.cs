@@ -7,6 +7,10 @@ public class Manager : MonoBehaviour
 {
     public static Manager instance;
     private bool isPaused = false;
+    public GameObject player;
+
+    private Manager() { }
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -50,5 +54,12 @@ public class Manager : MonoBehaviour
         SceneManager.UnloadSceneAsync("PauseMenu");
         isPaused = false;
         Time.timeScale = 1;
+    }
+    //end game 
+    public void EndGame()
+    {
+        int finalScore = player.GetComponent<PlayerScript>().score;
+        PlayerPrefs.SetInt("finalScore", finalScore);
+        SceneManager.LoadScene("GameOver");
     }
 }
