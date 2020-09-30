@@ -222,7 +222,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: -1
   far clip plane: 1000
   field of view: 60
   orthographic: 1
@@ -346,7 +346,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_Sprite: {fileID: 21300000, guid: 50de6d55ed964a7468e4ab7edf40b55f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -613,7 +613,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8efe074cb46a91246a8216e0aa3a5800, type: 3}
   m_Color: {r: 0.8679245, g: 0.07778566, b: 0.07778566, a: 1}
   m_FlipX: 0
@@ -1267,6 +1267,10 @@ PrefabInstance:
     - target: {fileID: 5146438714132052683, guid: b0ccff183c675a144a7d1e3a11d7c9ca, type: 3}
       propertyPath: m_Name
       value: starBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5283952277705022362, guid: b0ccff183c675a144a7d1e3a11d7c9ca, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9018294850985105427, guid: b0ccff183c675a144a7d1e3a11d7c9ca, type: 3}
       propertyPath: m_LocalPosition.x
